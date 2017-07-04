@@ -181,7 +181,9 @@ public class TextTag {
         /**
          * Set normal text, tag text and pos in one passage.
          * <br />
-         * Format like "QuickPic ${ BETA }", "${  ON SALE  } QuickPic".
+         * Format like "QuickPic ${ BETA }", "${ ON SALE } QuickPic".
+         * <br />
+         * See {@link #text(String)}, {@link #tag(String)}, {@link #pos(int)}
          */
         public Builder fastTag(@Nullable String text) {
             if (text == null) {
