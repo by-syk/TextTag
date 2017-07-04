@@ -18,6 +18,7 @@ package com.by_syk.lib.texttag;
 
 import android.graphics.Color;
 import android.support.annotation.ColorInt;
+import android.support.annotation.FloatRange;
 import android.support.annotation.IntDef;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -26,8 +27,6 @@ import android.text.TextUtils;
 import android.text.style.RelativeSizeSpan;
 
 /**
- * TextTag
- *
  * Created by By_syk on 2017-07-03.
  */
 
@@ -63,12 +62,14 @@ public class TextTag {
     public @interface Pos {}
 
     /**
-     * Hide the constructor. Use Builder to get TextTag instance.
+     * Use Builder to get TextTag instance.
      */
     private TextTag() {}
 
     /**
-     * Get the result.
+     * Get the SpannableString result.
+     * <br />
+     * Notice: if some parameters are invalid, empty SpannableString is returned.
      */
     @NonNull
     public SpannableString render() {
@@ -97,12 +98,12 @@ public class TextTag {
         return ssText;
     }
 
-    /**
-     * TextTag Builder
-     */
     public static class Builder {
         private TextTag textTag;
 
+        /**
+         * Builder to create TextTag instance.
+         */
         public Builder() {
             textTag = new TextTag();
         }
@@ -121,7 +122,7 @@ public class TextTag {
          * Add spaces at the beginning and end (like " xxx ") is recommended.
          */
         public Builder tag(@Nullable String tag) {
-            textTag.text = tag == null ? "" : tag;
+            textTag.tag = tag == null ? "" : tag;
             return this;
         }
 
@@ -150,7 +151,7 @@ public class TextTag {
          * <br />
          * The default is 0.5.
          */
-        public Builder sizeRatio(float sizeRatio) {
+        public Builder sizeRatio(@FloatRange(from = 0.1, to = 1.0) float sizeRatio) {
             if (sizeRatio <= 0.1f) {
                 textTag.sizeRatio = 0.1f;
             } else if (sizeRatio >= 1.0f) {

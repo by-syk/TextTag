@@ -7,8 +7,8 @@ android {
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 25
-        versionCode 17070401
-        versionName "1.0.5"
+        versionCode 17070402
+        versionName "1.0.6"
     }
 
     buildTypes {
@@ -25,7 +25,8 @@ dependencies {
     compile 'com.android.support:support-annotations:25.3.1'
 }
 
-// With sources and javadoc
+
+// for publishing to JitPack.io with sources and javadoc
 
 tasks.withType(JavaCompile) {
     options.encoding = "UTF-8"
