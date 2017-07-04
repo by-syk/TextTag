@@ -1,7 +1,11 @@
 # TextTag
 
+A simple library to add text tag.
 
-### Gradle
+
+### Adding to your project
+
+This library is available through [**JitPack.io**](https://jitpack.io/).
 
 **Step 1.** Add it in your root build.gradle at the end of repositories:
 
@@ -23,18 +27,18 @@ dependencies {
 ```
 
 
-### Usage
+### How to use
 
-```
-SpannableString ss = new TextTag.Builder()
+```java
+textView.setText(new TextTag.Builder()
     .text("快图浏览")
     .tag(" BETA ")
-    .build().render();
+    .build().render());
 ```
 
 ![Demo 1](art/demo1.png)
 
-```
+```java
 TextTag tt = new TextTag.Builder()
     .text("快图浏览")
     .tag(" GET ")
@@ -44,9 +48,24 @@ TextTag tt = new TextTag.Builder()
     .pos(TextTag.POS_START)
     .build();
 SpannableString ss = tt.render();
+textView.setText(ss);
 ```
 
 ![Demo 2](art/demo2.png)
+
+> You could use tag in
+> + text  
+>   `textView.setText(ss)`
+> + app title  
+>   `actionbar.setTitle(ss)`
+> + dialog title  
+>   `alertDialogBuilder.setTitle(ss)`
+> + and so on.
+
+
+### Demo APP
+
+[Get it](out/TextTagSample.apk)
 
 
 ### License
