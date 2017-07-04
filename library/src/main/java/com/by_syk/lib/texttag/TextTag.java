@@ -172,6 +172,9 @@ public class TextTag {
             return this;
         }
 
+        /**
+         * Get TextTag instance.
+         */
         public TextTag build() {
             return textTag;
         }
