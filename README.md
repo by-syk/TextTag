@@ -34,7 +34,6 @@ SpannableString ss = new TextTag.Builder()
 
 ![Demo 1](art/demo1.png)
 
-
 ```
 TextTag tt = new TextTag.Builder()
     .text("快图浏览")
