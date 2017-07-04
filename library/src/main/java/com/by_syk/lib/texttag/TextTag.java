@@ -20,6 +20,7 @@ import android.graphics.Color;
 import android.support.annotation.ColorInt;
 import android.support.annotation.IntDef;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.text.SpannableString;
 import android.text.TextUtils;
 import android.text.style.RelativeSizeSpan;
@@ -58,8 +59,17 @@ public class TextTag {
      */
     public static final int POS_END = 1;
 
+    @IntDef({POS_START, POS_END})
+    public @interface Pos {}
+
+    /**
+     * Hide the constructor. Use Builder to get TextTag instance.
+     */
     private TextTag() {}
 
+    /**
+     * Get the result.
+     */
     @NonNull
     public SpannableString render() {
         if (text.isEmpty()) {
@@ -87,9 +97,9 @@ public class TextTag {
         return ssText;
     }
 
-    @IntDef({POS_START, POS_END})
-    public @interface Pos {}
-
+    /**
+     * TextTag Builder
+     */
     public static class Builder {
         private TextTag textTag;
 
@@ -100,8 +110,8 @@ public class TextTag {
         /**
          * Set normal text.
          */
-        public Builder text(@NonNull String text) {
-            textTag.text = text;
+        public Builder text(@Nullable String text) {
+            textTag.text = text == null ? "" : text;
             return this;
         }
 
@@ -110,8 +120,8 @@ public class TextTag {
          * <br />
          * Add spaces at the beginning and end (like " xxx ") is recommended.
          */
-        public Builder tag(@NonNull String tag) {
-            textTag.tag = tag;
+        public Builder tag(@Nullable String tag) {
+            textTag.text = tag == null ? "" : tag;
             return this;
         }
 

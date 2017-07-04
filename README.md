@@ -1,7 +1,7 @@
 # TextTag
 
 [![](https://jitpack.io/v/by-syk/TextTag.svg)](https://jitpack.io/#by-syk/TextTag)
-[![](https://img.shields.io/badge/Download%20aar-1.0.4-brightgreen.svg)](out/texttag-1.0.4.aar)
+[![](https://img.shields.io/badge/Download%20aar-1.0.4-brightgreen.svg)](out/texttag-1.0.5.aar)
 
 A simple library to add text tag.
 
@@ -25,7 +25,7 @@ allprojects {
 
 ```
 dependencies {
-    compile 'com.github.by-syk:TextTag:1.0.4'
+    compile 'com.github.by-syk:TextTag:1.0.5'
 }
 ```
 
