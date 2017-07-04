@@ -25,7 +25,7 @@ allprojects {
 
 ```
 dependencies {
-    compile 'com.github.by-syk:TextTag:1.0.0'
+    compile 'com.github.by-syk:TextTag:1.0.4'
 }
 ```
 
