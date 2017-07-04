@@ -1,5 +1,7 @@
 # TextTag
 
+[![](https://jitpack.io/v/by-syk/TextTag.svg)](https://jitpack.io/#by-syk/TextTag)
+
 A simple library to add text tag.
 
 
