@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.by_syk.lib.texttag;
+package com.by_syk.lib.text;
 
 import android.graphics.Color;
 import android.support.annotation.ColorInt;
@@ -25,6 +25,9 @@ import android.support.annotation.Nullable;
 import android.text.SpannableString;
 import android.text.TextUtils;
 import android.text.style.RelativeSizeSpan;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Created by By_syk on 2017-07-03.
@@ -101,6 +104,9 @@ public class TextTag {
     public static class Builder {
         private TextTag textTag;
 
+        private static Pattern startTagPattern = Pattern.compile("\\$\\{(.+?)\\} (.+?)");
+        private static Pattern endTagPattern = Pattern.compile("(.+?) \\$\\{(.+?)\\}");
+
         /**
          * Builder to create TextTag instance.
          */
@@ -169,6 +175,38 @@ public class TextTag {
          */
         public Builder pos(@Pos int pos) {
             textTag.pos = pos;
+            return this;
+        }
+
+        /**
+         * Set normal text, tag text and pos in one passage.
+         * <br />
+         * Format like "QuickPic ${ BETA }", "${  ON SALE  } QuickPic".
+         */
+        public Builder fastTag(@Nullable String text) {
+            if (text == null) {
+                textTag.text = "";
+                textTag.tag = "";
+                textTag.pos = POS_END;
+                return this;
+            }
+            Matcher matcher = endTagPattern.matcher(text);
+            if (matcher.matches()) {
+                textTag.text = matcher.group(1);
+                textTag.tag = matcher.group(2);
+                textTag.pos = POS_END;
+                return this;
+            }
+            matcher = startTagPattern.matcher(text);
+            if (matcher.matches()) {
+                textTag.text = matcher.group(2);
+                textTag.tag = matcher.group(1);
+                textTag.pos = POS_START;
+                return this;
+            }
+            textTag.text = text;
+            textTag.tag = "";
+            textTag.pos = POS_END;
             return this;
         }
 

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.by_syk.lib.texttag;
+package com.by_syk.lib.text;
 
 import android.graphics.Canvas;
 import android.graphics.Color;

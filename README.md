@@ -1,7 +1,7 @@
 # TextTag
 
 [![](https://jitpack.io/v/by-syk/TextTag.svg)](https://jitpack.io/#by-syk/TextTag)
-[![](https://img.shields.io/badge/Download%20aar-1.0.6-brightgreen.svg)](out/texttag-1.0.6.aar)
+[![](https://img.shields.io/badge/Download%20aar-1.0.8-brightgreen.svg)](out/texttag-1.0.8.aar)
 
 A simple library to add text tag.
 
@@ -25,7 +25,7 @@ allprojects {
 
 ```
 dependencies {
-    compile 'com.github.by-syk:TextTag:1.0.6'
+    compile 'com.github.by-syk:TextTag:1.0.8'
 }
 ```
 
@@ -36,6 +36,12 @@ dependencies {
 textView.setText(new TextTag.Builder()
     .text("快图浏览")
     .tag(" BETA ")
+    .build().render());
+```
+
+```java
+textView.setText(new TextTag.Builder()
+    .fastTag("快图浏览 ${ BETA }")
     .build().render());
 ```
 

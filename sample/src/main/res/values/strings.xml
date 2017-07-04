@@ -17,7 +17,9 @@
 
 <resources>
 
-    <string name="app_name">TextTag</string>
+    <string name="app_name">TextTag Sample</string>
+
+    <string name="app_name_tag">"TextTag ${  Sample  }"</string>
 
     <string name="copyright" translatable="false">Copyright &#169; 2017 By_syk. All rights reserved.</string>
 

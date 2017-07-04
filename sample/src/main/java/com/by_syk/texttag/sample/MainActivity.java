@@ -21,7 +21,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.TextView;
 
-import com.by_syk.lib.texttag.TextTag;
+import com.by_syk.lib.text.TextTag;
 
 /**
  * Created by By_syk on 2016-07-16.
@@ -51,8 +51,7 @@ public class MainActivity extends Activity {
                 .setText(textTag.render());
 
         setTitle(new TextTag.Builder()
-                .text(getString(R.string.app_name))
-                .tag("  Sample  ")
+                .fastTag(getString(R.string.app_name_tag))
                 .bgColor(0xff707070)
                 .sizeRatio(0.7f)
                 .build().render());
