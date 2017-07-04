@@ -26,12 +26,12 @@ import android.text.style.ReplacementSpan;
  * Created by By_syk on 2017-07-03.
  */
 
-public class TextTagSpan extends ReplacementSpan {
+class TextTagSpan extends ReplacementSpan {
     private int bgColor = Color.GRAY;
     private int textColor = Color.WHITE;
     private float textSizeRatio = 1.0f;
 
-    public TextTagSpan(int bgColor, int textColor, float textSizeRatio) {
+    TextTagSpan(int bgColor, int textColor, float textSizeRatio) {
         super();
 
         this.bgColor = bgColor;
