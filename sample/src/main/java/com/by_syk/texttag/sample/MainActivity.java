@@ -21,7 +21,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.TextView;
 
-import com.by_syk.lib.text.TextTag;
+import com.by_syk.lib.texttag.TextTag;
 
 /**
  * Created by By_syk on 2016-07-16.

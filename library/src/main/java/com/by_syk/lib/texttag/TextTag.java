@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.by_syk.lib.text;
+package com.by_syk.lib.texttag;
 
 import android.graphics.Color;
 import android.support.annotation.ColorInt;
