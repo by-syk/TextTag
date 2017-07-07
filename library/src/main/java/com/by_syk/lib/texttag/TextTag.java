@@ -76,23 +76,26 @@ public class TextTag {
      */
     @NonNull
     public SpannableString render() {
-        if (text.isEmpty()) {
-            return new SpannableString("");
-        }
         if (TextUtils.isEmpty(tag)) {
             return new SpannableString(text);
         }
         SpannableString ssText;
         int indexStart;
         int indexEnd;
-        if (pos == POS_START) {
-            ssText = new SpannableString(tag + " " + text);
-            indexStart = 0;
-            indexEnd = tag.length();
+        if (!text.isEmpty()) {
+            if (pos == POS_START) {
+                ssText = new SpannableString(tag + " " + text);
+                indexStart = 0;
+                indexEnd = tag.length();
+            } else {
+                ssText = new SpannableString(text + " " + tag);
+                indexStart = text.length() + 1;
+                indexEnd = ssText.length();
+            }
         } else {
-            ssText = new SpannableString(text + " " + tag);
-            indexStart = text.length() + 1;
-            indexEnd = ssText.length();
+            ssText = new SpannableString(" " + tag + " ");
+            indexStart = 1;
+            indexEnd = tag.length() + 1;
         }
         ssText.setSpan(new RelativeSizeSpan(sizeRatio),
                 indexStart, indexEnd, SpannableString.SPAN_COMPOSING);

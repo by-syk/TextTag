@@ -8,8 +8,8 @@ android {
         applicationId "com.by_syk.texttag.sample"
         minSdkVersion 14
         targetSdkVersion 25
-        versionCode 17070600
-        versionName "1.0.9"
+        versionCode 17070700
+        versionName "1.1.0"
     }
 
     buildTypes {

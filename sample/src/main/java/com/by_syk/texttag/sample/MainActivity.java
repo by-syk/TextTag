@@ -35,7 +35,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         ((TextView) findViewById(R.id.tv1)).setText(new TextTag.Builder()
-                .text("快图浏览")
+//                .text("快图浏览")
                 .tag(" BETA ")
                 .build().render());
 
